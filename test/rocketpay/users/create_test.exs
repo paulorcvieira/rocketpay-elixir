@@ -22,9 +22,9 @@ defmodule Rocketpay.Users.CreateTest do
 
     test "when there are invalid params, returns an user" do
       params = %{
-        name: "Rafael",
-        nickname: "camarda",
-        email: "rafael@banana.com",
+        name: "Paulo",
+        nickname: "prcv",
+        email: "prcv@email.com",
         age: 15
       }
 
