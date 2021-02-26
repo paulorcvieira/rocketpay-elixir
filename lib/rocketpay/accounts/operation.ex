@@ -1,7 +1,7 @@
 defmodule Rocketpay.Accounts.Operation do
   alias Ecto.Multi
 
-  alias Rocketpay.{Account, Repo}
+  alias Rocketpay.Account
 
   def call(%{"id" => id, "value" => value}, operation) do
     operation_name = account_operation_name(operation)
@@ -39,8 +39,10 @@ defmodule Rocketpay.Accounts.Operation do
 
   defp update_account({:error, _reason} = error, _repo, _account), do: error
   defp update_account(value, repo, account) do
+    params = %{balance: value}
+
     account
-    |> Account.changeset(%{balance: value})
+    |> Account.changeset(params)
     |> repo.update()
   end
 

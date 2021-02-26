@@ -22,6 +22,10 @@ config :rocketpay, Rocketpay.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreing_key: [type: :binary_id]
 
+config :rocketpay, :basic_auth,
+  username: "prcv",
+  password: "123456"
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
